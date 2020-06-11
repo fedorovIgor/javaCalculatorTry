@@ -5,14 +5,14 @@ import java.awt.*;
 
 public class SimpleCalculator {
  
-	 private JTextField result;
+	 private JTextField answerField;
 	 
 	 public void setDisplayValue(String val) {
-		 result.setText(val);
+		 answerField.setText(val);
 	 }
 	 
 	 public String getDisplayValue() {
-		 return result.getText();
+		 return answerField.getText();
 	 }
 	 
 	 SimpleCalculator() {
@@ -26,7 +26,7 @@ public class SimpleCalculator {
 			 
 			 
 			 // We create text field and Greed panels to put them into JPanel
-			 JTextField answerField = new JTextField();
+			 answerField = new JTextField();
 			 answerField.setHorizontalAlignment ( JTextField.RIGHT );
 			 answerField.setFont(new Font("SansSerif", Font.BOLD, 25));
 			 
@@ -94,9 +94,17 @@ public class SimpleCalculator {
 			 
 			 
 			 //*****///
-			 //CalcEngin callEgine = new CalcEngin(this);
-			 //go.addActionListener(callEgine);
-			 
+			 CalcEngin callEgine = new CalcEngin(this);
+			 numberOne.addActionListener(callEgine);
+			 numberTwo.addActionListener(callEgine);
+			 numberThree.addActionListener(callEgine);
+			 numberFour.addActionListener(callEgine);
+			 numberFive.addActionListener(callEgine);
+			 numberSix.addActionListener(callEgine);
+			 numberSeven.addActionListener(callEgine);
+			 numberEight.addActionListener(callEgine);
+			 numberNine.addActionListener(callEgine);
+			 numberZero.addActionListener(callEgine);
 			 
 			 
 			 // Create the frame and add the panel to it
