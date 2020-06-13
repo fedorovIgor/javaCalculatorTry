@@ -1,4 +1,4 @@
-package calculator;
+package javaCalculatorTry.src.main.java.calculator;
 
 import java.awt.event.*;
 import javax.swing.JButton;
@@ -7,11 +7,11 @@ import javax.swing.JButton;
 public class CalcEngin implements ActionListener  {
 
 	private SimpleCalculator calkParent;
-	private String message;
+	private String currentMessage;
 	
-	private int first;
-	private int second;
-	private String operator;
+	private int numberInMemory;
+	private String operator = null;
+	//private String answer = null;
 	
 	
 	CalcEngin(SimpleCalculator calkParent) {
@@ -24,19 +24,30 @@ public class CalcEngin implements ActionListener  {
 		JButton clickButton = (JButton) e.getSource();
 		String clickedButtonLabel = clickButton.getText();
 		
-		message = calkParent.getDisplayValue();
-		
-		/*
-		if(clikedButtonLabel == '+') {
-			this.first = Integer.parseInt(message);
-			this.operator = '+';
-			message = "";
+		currentMessage = calkParent.getDisplayValue();
+
+
+		if(clickedButtonLabel == "+" || clickedButtonLabel == "-" || 
+				clickedButtonLabel == "*" || clickedButtonLabel == "/" || clickedButtonLabel == "=") {
+			if(operator != null && operator != "=") {
+				currentMessage = Calculate.calck(numberInMemory, Integer.parseInt(currentMessage), operator );
+				numberInMemory = Integer.parseInt(currentMessage);
+				operator = clickedButtonLabel;
+			} else if (operator != null && clickedButtonLabel == "=") {
+				currentMessage = Calculate.calck(numberInMemory, Integer.parseInt(currentMessage), operator );
+				numberInMemory = Integer.parseInt(currentMessage);
+				operator = null;
+			}else {
+				numberInMemory = Integer.parseInt(currentMessage);
+				operator = clickedButtonLabel;
+				currentMessage = "";
+				
+			}
+		} else {
+			currentMessage += clickedButtonLabel;
 		}
-		*/
-			
 		
-		message += clickedButtonLabel;
 		
-		calkParent.setDisplayValue(message);	
+		calkParent.setDisplayValue(currentMessage);	
 	}	
 }

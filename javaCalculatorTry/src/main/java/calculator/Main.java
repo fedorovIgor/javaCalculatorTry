@@ -1,16 +1,11 @@
-package calculator;
+package javaCalculatorTry.src.main.java.calculator;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
 	public static void main(String []arg) {
 		
 		
-		SimpleCalculator m = new SimpleCalculator();
+		 new SimpleCalculator();
 
 	}
-
-	
-
 }

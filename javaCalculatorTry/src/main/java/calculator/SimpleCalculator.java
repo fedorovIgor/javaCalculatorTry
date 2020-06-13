@@ -1,4 +1,4 @@
-package calculator;
+package javaCalculatorTry.src.main.java.calculator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +14,7 @@ public class SimpleCalculator {
 	 public String getDisplayValue() {
 		 return answerField.getText();
 	 }
+	 
 	 
 	 SimpleCalculator() {
 		
@@ -55,10 +56,9 @@ public class SimpleCalculator {
 			 JButton difference = new JButton("-");
 			 JButton point = new JButton(".");
 			 JButton solution = new JButton("=");
+
 			 
-			 		
 			 //Add controls to Greed panel
-			 
 			 numberPanel.add(numberSeven);
 			 numberPanel.add(numberEight);
 			 numberPanel.add(numberNine);
@@ -106,6 +106,11 @@ public class SimpleCalculator {
 			 numberNine.addActionListener(callEgine);
 			 numberZero.addActionListener(callEgine);
 			 
+			 multiply.addActionListener(callEgine);
+			 division.addActionListener(callEgine);
+			 add.addActionListener(callEgine);
+			 difference.addActionListener(callEgine);
+			 solution.addActionListener(callEgine);
 			 
 			 // Create the frame and add the panel to it
 			 JFrame frame = new JFrame("My First Calculator");
