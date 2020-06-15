@@ -1,3 +1,4 @@
+/*
 package javaCalculatorTry.src.main.java.calculator;
 
 import java.awt.event.WindowAdapter;
@@ -15,3 +16,4 @@ public class MyWindowEventProcessor extends WindowAdapter {
 	}
 }
 		
+*/
