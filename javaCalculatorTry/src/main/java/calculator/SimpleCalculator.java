@@ -2,10 +2,12 @@ package javaCalculatorTry.src.main.java.calculator;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class SimpleCalculator {
  
 	 private JTextField answerField;
+	 
 	 
 	 public void setDisplayValue(String val) {
 		 answerField.setText(val);
@@ -14,6 +16,7 @@ public class SimpleCalculator {
 	 public String getDisplayValue() {
 		 return answerField.getText();
 	 }
+	 
 	 
 	 
 	 SimpleCalculator() {
@@ -112,6 +115,11 @@ public class SimpleCalculator {
 			 difference.addActionListener(callEgine);
 			 solution.addActionListener(callEgine);
 			 
+			 
+			 MyWindowEventProcessor mv = new MyWindowEventProcessor();
+			 this.addWindowListener(mv);
+			
+			 
 			 // Create the frame and add the panel to it
 			 JFrame frame = new JFrame("My First Calculator");
 
@@ -119,9 +127,11 @@ public class SimpleCalculator {
 			 frame.setContentPane(windowContent);
 
 			 // set the size and make the window visible
-			 frame.setSize(420,210);
+			 frame.setSize(210,320);
 			 frame.setVisible(true);
 		 	
 	}
+	
+	       
 	 
  }
